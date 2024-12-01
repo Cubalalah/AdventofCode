@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="2024">
+      <UniqueIdentifier>{2bd74fbc-ddc2-4705-9310-f92a3eeaac2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2024\01">
+      <UniqueIdentifier>{0dcbf53e-08cc-4b0a-87c1-289a213c64bb}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="01.cpp">
+      <Filter>2024\01</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="input.txt">
+      <Filter>2024\01</Filter>
+    </Text>
+  </ItemGroup>
+</Project>
