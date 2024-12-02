@@ -7,15 +7,24 @@
     <Filter Include="2024\01">
       <UniqueIdentifier>{0dcbf53e-08cc-4b0a-87c1-289a213c64bb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="2024\02">
+      <UniqueIdentifier>{ea330493-6709-4311-9ea4-adef27be4b70}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="01.cpp">
       <Filter>2024\01</Filter>
     </ClCompile>
+    <ClCompile Include="02.cpp">
+      <Filter>2024\02</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="input.txt">
+    <Text Include="01.txt">
       <Filter>2024\01</Filter>
+    </Text>
+    <Text Include="02.txt">
+      <Filter>2024\02</Filter>
     </Text>
   </ItemGroup>
 </Project>

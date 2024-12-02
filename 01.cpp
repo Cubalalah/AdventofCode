@@ -3,28 +3,11 @@
 #include <fstream>
 #include <string>
 #include <list>
-#include <vector>
-#include <tuple>
 
 using namespace std;
 
-bool comp(int a, int b) {
-	return a >= b;
-}
-
-ifstream readFile(string& path) {
-	ifstream input(path);
-	if (input) {
-		return input;
-	}
-	else {
-		cout << "ERROR : Unable to read file at path : " << path;
-		return input;
-	}
-}
-
-int main() {
-	ifstream input("input.txt");
+int main_01() {
+	ifstream input("01.txt");
 	string line;
 	list<int> locationIDs_1;
 	list<int> locationIDs_2;
@@ -61,4 +44,6 @@ int main() {
 	}
 
 	cout << "Part 2 - Similarity score : " << similarity_score << "\n";
+
+	return 0;
 }
