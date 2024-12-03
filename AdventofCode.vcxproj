@@ -129,10 +129,12 @@
   <ItemGroup>
     <ClCompile Include="01.cpp" />
     <ClCompile Include="02.cpp" />
+    <ClCompile Include="03.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="01.txt" />
     <Text Include="02.txt" />
+    <Text Include="03.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

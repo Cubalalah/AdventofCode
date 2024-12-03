@@ -55,7 +55,7 @@ bool isSafeWithProblemDampener(vector<int> init_report) {
     return false;
 }
 
-int main() {
+int main_02() {
     ifstream input("02.txt");
     string line;
     int part_1_counter = 0;
