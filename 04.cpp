@@ -38,6 +38,24 @@ bool isXMAS(int x, int y, vector<vector<char>> table, tuple<int, int> direction)
             }
         }
     }
+    else if (table[x][y] == 'S') {
+        x += get<0>(direction);
+        y += get<1>(direction);
+
+        if (isValidCoordinates(x, y, table) && table[x][y] == 'A') {
+            x += get<0>(direction);
+            y += get<1>(direction);
+
+            if (isValidCoordinates(x, y, table) && table[x][y] == 'M') {
+                x += get<0>(direction);
+                y += get<1>(direction);
+
+                if (isValidCoordinates(x, y, table) && table[x][y] == 'X') {
+                    return true;
+                }
+            }
+        }
+    }
     return false;
 }
 
@@ -74,18 +92,12 @@ int main() {
         table.push_back(row);
     }
 
-    vector<tuple<int, int>> directions;
-    for (int i = -1; i <= 1; i++) {
-        for (int j = -1; j <= 1; j++) {
-            directions.push_back(make_tuple(i, j));
-        }
-    }
+    vector<tuple<int, int>> directions = { make_tuple(1,0), make_tuple(1,1), make_tuple(0,1), make_tuple(-1,1) };
 
     int numberOfXMAS = 0;
     int numberOfX_MAS = 0;
 
     for (size_t i = 0; i < table.size(); i++) {
-        cout << i << "\n";
         for (size_t j = 0; j < table[i].size(); j++) {
             for (tuple<int, int> direction : directions) {
                 if (isXMAS(j, i, table, direction)) {
