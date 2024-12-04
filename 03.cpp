@@ -72,7 +72,7 @@ vector<tuple<int, int>> findMulWDoDont(string line) {
     return mul_vector;
 }
 
-int main() {
+int main_03() {
     ifstream input("03.txt");
     string line;
     string complete_line;
