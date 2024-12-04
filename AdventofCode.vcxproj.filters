@@ -31,4 +31,18 @@
       <Filter>2024\04</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="01.txt">
+      <Filter>2024\01</Filter>
+    </Text>
+    <Text Include="02.txt">
+      <Filter>2024\02</Filter>
+    </Text>
+    <Text Include="03.txt">
+      <Filter>2024\03</Filter>
+    </Text>
+    <Text Include="04.txt">
+      <Filter>2024\04</Filter>
+    </Text>
+  </ItemGroup>
 </Project>
