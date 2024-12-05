@@ -79,7 +79,7 @@ bool isX_MAS(int x, int y, vector<vector<char>> table) {
     return false;
 }
 
-int main() {
+int main_04() {
     ifstream input("04.txt");
     string line;
     vector<vector<char>> table;
