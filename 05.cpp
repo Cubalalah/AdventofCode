@@ -51,7 +51,7 @@ vector<int> becomeCorrect(vector<int> line_vector, vector<tuple<int, int>> rules
     return line_vector;
 }
 
-int main() {
+int main_05() {
     ifstream input("05.txt");
     string line;
     vector<tuple<int,int>> rules;
