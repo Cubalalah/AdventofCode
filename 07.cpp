@@ -84,7 +84,7 @@ bool isTrueEquation_2(long long result, vector<int> numbers) {
     return findEquation_2(result, numbers, var);
 }
 
-int main() {
+int main_07() {
     ifstream input("07.txt");
     string line;
     vector<tuple<long long, vector<int>>> operators;

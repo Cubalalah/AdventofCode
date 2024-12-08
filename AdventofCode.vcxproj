@@ -134,6 +134,7 @@
     <ClCompile Include="05.cpp" />
     <ClCompile Include="06.cpp" />
     <ClCompile Include="07.cpp" />
+    <ClCompile Include="08.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="01.txt" />
@@ -143,6 +144,7 @@
     <Text Include="05.txt" />
     <Text Include="06.txt" />
     <Text Include="07.txt" />
+    <Text Include="08.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

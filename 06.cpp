@@ -38,12 +38,14 @@ bool isInbound(tuple<int,int> pos, int max_l, int max_c) {
     return true;
 }
 
+
 bool isObjectinSet(int l, int c, set<tuple<int, int>>& const object_set) {
     if (find(object_set.begin(), object_set.end(), make_tuple(l, c)) != object_set.end()) {
         return true;
     }
     return false;
 }
+
 
 bool isObjectinSet(int l, int c, int d, set<tuple<int, int, int>>& const object_set) {
     if (find(object_set.begin(), object_set.end(), make_tuple(l, c, d)) != object_set.end()) {
