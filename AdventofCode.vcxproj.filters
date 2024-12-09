@@ -28,6 +28,9 @@
     <Filter Include="2024\08">
       <UniqueIdentifier>{1dad26cd-ffc6-4c6e-9bb2-c0b13be4c88f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="2024\09">
+      <UniqueIdentifier>{54fc161a-0f46-49e4-a367-b56184cfb862}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="01.cpp">
@@ -54,6 +57,9 @@
     <ClCompile Include="08.cpp">
       <Filter>2024\08</Filter>
     </ClCompile>
+    <ClCompile Include="09.cpp">
+      <Filter>2024\09</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="01.txt">
@@ -79,6 +85,9 @@
     </Text>
     <Text Include="08.txt">
       <Filter>2024\08</Filter>
+    </Text>
+    <Text Include="09.txt">
+      <Filter>2024\09</Filter>
     </Text>
   </ItemGroup>
 </Project>

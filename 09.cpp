@@ -13,15 +13,16 @@ using namespace std;
 
 vector<int> diskMapMaker(string line) {
     vector<int> disk_map;
+    int n = 0;
     for (int i = 0; i < line.size(); i++) {
-        int n = (i / 2) % 10;
         if (i % 2 == 0) {
-            for (size_t j = 0; j < line[i]-'0'; j++) {
+            for (int j = 0; j < line[i]-'0'; j++) {
                 disk_map.push_back(n);
             }
+            n++;
         }
         else {
-            for (size_t j = 0; j < line[i]-'0'; j++) {
+            for (int j = 0; j < line[i]-'0'; j++) {
                 disk_map.push_back(-1);
             }
         }
@@ -29,20 +30,64 @@ vector<int> diskMapMaker(string line) {
     return disk_map;
 }
 
-void rearrangeDiskMap(vector<int>& disk_map) {
-    for (int i = disk_map.size()-1; i > -1; i--) {
-        if (disk_map[i] != -1 && find(disk_map.begin(), disk_map.end(), -1) != disk_map.end()) {
+void rearrangeDiskMap_1(vector<int>& disk_map) {
+    for (long long i = disk_map.size()-1; i >= 0; i--) {
+        if (disk_map[i] != -1) {
             auto pos = find(disk_map.begin(), disk_map.end(), -1);
-            *pos = disk_map[i];
+            if (pos < disk_map.begin() + i) {
+                *pos = disk_map[i];
+                disk_map.erase(disk_map.begin() + i);
+            }
+        }
+        else {
             disk_map.erase(disk_map.begin() + i);
         }
+    }
+}
+
+int searchEmptySpace(vector<int>& disk_map, int size, int maxi) {
+    for (int i = 0; i <= maxi-size; i++) {
+        bool match = true;
+        for (int j = 0; j < size; j++) {
+            if (disk_map[i + j] != -1) {
+                match = false;
+                break;
+            }
+        }
+        if (match) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+void moveFile(int begin, int end, int empty_space, vector<int>& disk_map) {
+    for (int i = 0; i < end - begin; i++) {
+        disk_map[empty_space + i] = disk_map[begin + i];
+        disk_map[begin + i] = -1;
+    }
+}
+
+void rearrangeDiskMap_2(vector<int>& disk_map, string line) {
+    int k = disk_map.size();
+    for (int j = line.size() - 1; j >= 0; j--) {
+        int pos = line[j] - '0';
+        if (j % 2 == 0 && pos != 0) {
+            int empty_space = searchEmptySpace(disk_map, pos, k);
+            if (empty_space != -1) {
+                moveFile(k - pos, k, empty_space, disk_map);
+            }
+        }
+        k -= pos;
     }
 }
 
 long long checkSum(vector<int>& vect) {
     long long sum = 0;
     for (long long i = 0; i < vect.size(); i++) {
-        sum += i * vect[i];
+        if (vect[i] != -1) {
+            sum += i * vect[i];
+        }
     }
     return sum;
 }
@@ -54,9 +99,15 @@ int main() {
     getline(input, line);
 
     vector<int> disk_map = diskMapMaker(line);
-    rearrangeDiskMap(disk_map);
+    rearrangeDiskMap_1(disk_map);
     long long part1 = checkSum(disk_map);
 
+    disk_map = diskMapMaker(line);
+    rearrangeDiskMap_2(disk_map, line);
+
+    long long part2 = checkSum(disk_map);
+
     cout << "Part 1 : Filesystem checksum : " << part1 << "\n";
+    cout << "Part 2 : Filesystem checksum : " << part2 << "\n";
     return 0;
 }
