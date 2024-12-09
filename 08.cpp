@@ -88,7 +88,7 @@ void findAntinodesWHarmonics(vector<Antenna*>& same_f_antennas, set<tuple<int, i
     }
 }
 
-int main() {
+int main_08() {
     ifstream input("08.txt");
     string line;
     int column = 0;
