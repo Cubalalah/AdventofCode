@@ -92,7 +92,7 @@ long long checkSum(vector<int>& vect) {
     return sum;
 }
 
-int main() {
+int main_09() {
     ifstream input("09.txt");
     string line;
 
