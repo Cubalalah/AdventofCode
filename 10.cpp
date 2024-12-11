@@ -60,7 +60,7 @@ tuple<int,int> scoreCalculation(pair<int, int> t, vector<vector<int>>& const map
     return make_tuple(set_summits.size(), summits.size());
 }
 
-int main() {
+int main_10() {
     ifstream input("10.txt");
     string line;
     vector<vector<int>> map;
